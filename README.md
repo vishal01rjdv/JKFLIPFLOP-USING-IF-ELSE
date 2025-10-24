@@ -38,11 +38,30 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by:VISHAL R RegisterNumber:25004464
 */
 
+module jkff(j,k,clk,q,qbar);
+input j,k,clk;
+output reg q,qbar;
+initial
+begin
+q=1'b0;
+q=1'b1;
+end
+always @(posedge clk)
+begin
+q<=(j&~q)|(~k&q);
+qbar<=~q;
+end
+endmodule
+
 **RTL LOGIC FOR FLIPFLOPS**
+<img width="785" height="246" alt="Screenshot 2025-10-24 085934" src="https://github.com/user-attachments/assets/e5daa2f1-34f1-49fb-ae67-85f5eb322e16" />
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+<img width="819" height="246" alt="Screenshot 2025-10-24 085946" src="https://github.com/user-attachments/assets/99762746-47d9-4756-b105-b298d9c0676f" />
 
 **RESULTS**
+Thus the Serial-in and Serial-out Register is designed and is verified using
+Quartus software.
